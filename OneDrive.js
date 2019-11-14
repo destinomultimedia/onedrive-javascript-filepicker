@@ -918,6 +918,11 @@ var __extends = this && this.__extends || function(e, t) {
                                     cm: d.commandMode
                                 },
                                 r = s.appendQueryString(p.url, "picker", JSON.stringify(t));
+                                //PATCH TO LOAD CUSTOM DRIVE ROOT//							
+								if (d.entryLocation.sharePoint.listPath) {
+									r += s.appendQueryString("?", "listurl", d.entryLocation.sharePoint.listPath);
+								}
+								//END PATCH//
                             o.default.logMessage("invoke picker with url: " + r);
                             if (!d.parentDiv) return c.openPopup(r).then(function() {
                                 u({
