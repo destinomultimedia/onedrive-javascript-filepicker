@@ -920,7 +920,7 @@ var __extends = this && this.__extends || function(e, t) {
                                 r = s.appendQueryString(p.url, "picker", JSON.stringify(t));
                                 //PATCH TO LOAD CUSTOM DRIVE ROOT//							
 								if (d.entryLocation.sharePoint.listPath) {
-									r += s.appendQueryString("?", "listurl", d.entryLocation.sharePoint.listPath);
+									r += s.appendQueryString(r, "listurl", d.entryLocation.sharePoint.listPath);
 								}
 								//END PATCH//
                             o.default.logMessage("invoke picker with url: " + r);
